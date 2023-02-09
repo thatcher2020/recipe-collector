@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    /*style for nav bar*/
+    #navbar {
+      background-color: aqua;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /*style for search bar*/
+    #searchbar {
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid black;
+    }
+
+    /*style for sidebar*/
+    #sidebar {
+      background-color: rgb(0, 255, 76);
+      width: 200px;
+      float: left;
+      padding: 10px;
+    }
+
+    /*style for sidebar ul*/
+    #sidebar-ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /*style for main*/
+    #main {
+      float: right;
+      width: calc(100% - 200px);
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #main-img {
+      width: calc(100% / 3 - 20px);
+      height: auto;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar">
+    <input type="text" id="search-bar" placeholder="search....">
+    <h1>Recipe Collector</h1>
+  </div>
+
+  <div id="sidebar">
+    <h2>categories</h2>
+    <ul>
+      <li>breakfast</li>
+      <li>lunch</li>
+      <li>dinner</li>
+      <li>dessert</li>
+      <li>meat</li>
+      <li>vegan</li>
+      <li>vegetarian</li>
+    </ul>
+  </div>
+
+  <div id="main">
+    <img src="image.jpg" alt="image 1">
+    <img src="image.jpg" alt="image 2">
+    <img src="image.jpg" alt="image 3">
+    <img src="image.jpg" alt="image 4">
+    <img src="image.jpg" alt="image 5">
+    <img src="image.jpg" alt="image 6">
+    <img src="image.jpg" alt="image 7">
+    <img src="image.jpg" alt="image 8">
+    <img src="image.jpg" alt="image 9">
+    <img src="image.jpg" alt="image 10">
+  </div>
+</body>
+
+</html>
