@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Collector</title>
+
   <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
     /*style for nav bar*/
     #navbar {
-      background-color: aqua;
+      background-color: rgb(0, 174, 255);
       padding: 10px;
       display: flex;
       justify-content: space-between;
     }
 
     /*style for search bar*/
-    #searchbar {
-      padding: 10px;
+    #search-bar {
+      padding: 5px 10px;
       border-radius: 5px;
-      border: 2px solid black;
+      border: 1px solid black;
+      margin: 10px;
+      font-size: 15px;
+    }
+    
+    #header {
+      background-color: white;
+      margin: 0;
     }
 
     /*style for sidebar*/
     #sidebar {
-      background-color: rgb(0, 255, 76);
-      width: 200px;
+      background-color: rgb(0, 255, 213);
+      width: 150px;
       float: left;
       padding: 10px;
+      height: 100%;
     }
 
     /*style for sidebar ul*/
@@ -39,6 +55,14 @@
       padding: 10px;
       display: flex;
       flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    #main-img-1 {
+      width: 100%;
+      height: auto;
+      margin: 10px 0;
+      text-align: center;
     }
 
     #main-img {
@@ -69,16 +93,16 @@
   </div>
 
   <div id="main">
-    <img src="image.jpg" alt="image 1">
-    <img src="image.jpg" alt="image 2">
-    <img src="image.jpg" alt="image 3">
-    <img src="image.jpg" alt="image 4">
-    <img src="image.jpg" alt="image 5">
-    <img src="image.jpg" alt="image 6">
-    <img src="image.jpg" alt="image 7">
-    <img src="image.jpg" alt="image 8">
-    <img src="image.jpg" alt="image 9">
-    <img src="image.jpg" alt="image 10">
+    <img src="image.jpg" alt="image 1" id="main-img-1">
+    <img src="image.jpg" alt="image 2" id="main-img">
+    <img src="image.jpg" alt="image 3" id="main-img">
+    <img src="image.jpg" alt="image 4" id="main-img">
+    <img src="image.jpg" alt="image 5" id="main-img">
+    <img src="image.jpg" alt="image 6" id="main-img">
+    <img src="image.jpg" alt="image 7" id="main-img">
+    <img src="image.jpg" alt="image 8" id="main-img">
+    <img src="image.jpg" alt="image 9" id="main-img">
+    <img src="image.jpg" alt="image 10" id="main-img">
   </div>
 </body>
 
