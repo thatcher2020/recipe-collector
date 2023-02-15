@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -5,10 +6,8 @@ const exphbs = require('express-handlebars');
 // routes aren't fully set up
 const routes = require('./controllers');
 
-
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 
 const sess = {
   secret: 'Super secret secret',
@@ -22,7 +21,7 @@ const sess = {
   saveUninitialized: true,
 };
 
-// app.use = middleware
+
 // defining what's happening in your request lifecycle
 app.use(session(sess));
 
@@ -30,9 +29,10 @@ app.use(session(sess));
 app.set('views', './views');
 
 const hbs = exphbs.create({
-  extname      :'hbs',
+  extname:'hbs',
   defaultLayout: 'main',
 });
+
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
@@ -45,3 +45,5 @@ app.use(routes);
 
 
   app.listen(PORT, () => console.log('Now listening'));
+
+
