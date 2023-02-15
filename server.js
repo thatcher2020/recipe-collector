@@ -5,10 +5,18 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 // routes aren't fully set up
 const routes = require('./controllers');
+const helpers = require('./utils/helpers');
+
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//setting help hbs with helpers
+const hbs = exphbs.create({ helpers });
+
+// setting up session
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -21,12 +29,11 @@ const sess = {
   saveUninitialized: true,
 };
 
-
-// defining what's happening in your request lifecycle
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
-app.set('views', './views');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 const hbs = exphbs.create({
   extname:'hbs',
@@ -43,7 +50,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // this is to simplify and organize our routes
 app.use(routes);
 
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+});
 
   app.listen(PORT, () => console.log('Now listening'));
-
-
