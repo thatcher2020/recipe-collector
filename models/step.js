@@ -1,9 +1,10 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Recipe extends Model {}
-
-Recipe.init(
+class Step extends Model {}
+//needs a recipe id
+//seeds week 14 and 15
+Step.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,22 +12,21 @@ Recipe.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    instruction: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    order: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
-  
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: "project",
   }
 );
 
