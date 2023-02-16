@@ -1,33 +1,42 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Recipe extends Model {}
 
-Recipe.init(
+// create our Trip model
+class recipe extends Model {}
+
+// create fields/columns for Trip model
+recipe.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
       type: DataTypes.STRING,
       allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-    user_id: {
+   ingredient_amount: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true
+    },
+    
+    ingredient_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      references: {
+        model: 'traveller',
+        key: 'id',
+        unique: false
+      }
     },
   },
-  
+
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+
+    modelName: 'trip'
   }
 );
 
-module.exports = Project;
+module.exports = Trip;
