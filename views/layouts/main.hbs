@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Collector</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /*style for nav bar*/
+    #navbar {
+      background-color: rgb(0, 174, 255);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /*style for search bar*/
+    #search-bar {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid black;
+      margin: 10px;
+      font-size: 15px;
+    }
+    
+    #header {
+      background-color: white;
+      margin: 0;
+    }
+
+    /*style for sidebar*/
+    #sidebar {
+      background-color: rgb(0, 255, 213);
+      width: 150px;
+      float: left;
+      padding: 10px;
+      height: 100%;
+    }
+
+    /*style for sidebar ul*/
+    #sidebar-ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /*style for main*/
+    #main {
+      float: right;
+      width: calc(100% - 200px);
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    #main-img-1 {
+      width: 100%;
+      height: auto;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    #main-img {
+      width: calc(100% / 3 - 20px);
+      height: auto;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar">
+    <input type="text" id="search-bar" placeholder="search....">
+    <h1>Recipe Collector</h1>
+  </div>
+
+  <div id="sidebar">
+    <h2>Ideas To Search For</h2>
+    <ul>
+      <li>breakfast</li>
+      <li>lunch</li>
+      <li>dinner</li>
+      <li>dessert</li>
+      <li>meat</li>
+      <li>vegan</li>
+      <li>vegetarian</li>
+    </ul>
+  </div>
+
+  <div id="main">
+    {{{body}}}
+  </div>
+</body>
+
+</html>
