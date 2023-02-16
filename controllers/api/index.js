@@ -7,7 +7,7 @@ router.use('/projects', projectRoutes);
 router.use('/recipes', recipeRoutes);
 router.use('/users', userRoutes);
 
-//adding error handling?
+
 
 
 module.exports = router;
