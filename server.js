@@ -1,8 +1,11 @@
+require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+// routes aren't fully set up
 const routes = require('./controllers');
+//helpers aren't fully set up
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -11,9 +14,15 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
+//setting help hbs with helpers
+// const hbs = exphbs.create({ helpers });
 
+const hbs = exphbs.create({
+  extname:'hbs',
+  defaultLayout: 'main',
+});
+
+// setting up session
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -24,9 +33,9 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+  Store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -39,8 +48,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// this is to simplify and organize our routes
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log('Now listening'));
 });
+
+  app.listen(PORT, () => console.log('Now listening'));

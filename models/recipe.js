@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+
 // create our Trip model
 class recipe extends Model {}
 
@@ -27,11 +28,13 @@ recipe.init(
       }
     },
   },
+
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+
     modelName: 'trip'
   }
 );
